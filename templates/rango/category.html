@@ -1,13 +1,11 @@
 <!DOCTYPEhtml>
-
 <html>
-
     <head> 
         <title>Rango</title>
     </head>
-    
-    <body>
-        <div>
+
+    <body> 
+        <div>            
         {% if category %}
             <h1>{{ category.name }}</h1> 
             {% if pages %}
@@ -17,13 +15,11 @@
                 {% endfor %}
             </ul>
             {% else %}
-            <strong>No pages currently in category.</strong> 
-            {% endif %}
-        {% else %}
-            The specified category does not exist.
+        <strong>No pages currently in category.</strong> 
         {% endif %}
-        </div> 
+      {% else %}
+         The specified category does not exist.
+      {% endif %}
+      </div> 
     </body>
-
 </html>
-
