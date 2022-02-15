@@ -6,7 +6,7 @@ from rango.models import Category
 
 from rango.models import Page
 
-from rango.forms import CategoryForm
+from rango.forms import CategoryForm, PageForm
 
 from django.shortcuts import redirect 
 from django.urls import reverse
@@ -51,7 +51,8 @@ def add_category(request):
   if request.method == 'POST':
     form = CategoryForm(request.POST)
     if form.is_valid():
-      form.save(commit=True)
+      cat = form.save(commit=True)
+      print(cat)
       return redirect('/rango/')
     else:
       print(form.errors)
